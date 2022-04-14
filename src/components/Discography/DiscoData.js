@@ -123,7 +123,16 @@ const albums =
       series: "",
       genre: "Reggae",
       albumArt: "/images/confrontation.jpg"
-    }
+    },
+    {
+      artist: "Sizzla",
+      albumName: "Da Real Thing",
+      releaseDate: new Date(2002),
+      mixtape: 0,
+      series: "",
+      genre: "Reggae",
+      albumArt: "/images/darealthing.jpg"
+    },
   ]
 
 export default albums

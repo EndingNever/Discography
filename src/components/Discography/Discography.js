@@ -6,9 +6,7 @@ import albums from './DiscoData'
 
 
 export default function Discography() {
-  const handleHover = () => {
 
-  }
 
   const albumMap = albums.map((album) => (
     <div className='discography-container'>
@@ -24,23 +22,31 @@ export default function Discography() {
     </div>
   ));
 
-  const artistMap = albums.map((album) => (
-    <option value={album.artist}>{album.artist}</option>
+  const artists = albums.map((album) => (
+    album.artist
   ))
+
+  const genres = albums.map((album) => (
+    album.genre
+  ))
+
+  const genresDeduped = Array.from(new Set(genres)).map((genre) =>(
+    <option value={genre}>{genre}</option>
+  ))
+
+  const artistsDeduped = Array.from(new Set(artists)).map((artist) =>(
+    <option value={artist}>{artist}</option>
+  ));
 
 
   return (
     <>
       <div>
-        <select name="genre" id="genre">
-          {artistMap}
+        <select name="artist" id="artist">
+          {artistsDeduped}
         </select>
         <select name="artist" id="artist">
-          {albumMap}
-          <option value="Artist" selected>Artist</option>
-          <option value></option>
-          <option value="reggae">Reggae</option>
-          <option value="hip hop">Hip Hop</option>
+          {genresDeduped}
         </select>
       </div>
       {albumMap}
