@@ -30,23 +30,42 @@ export default function Discography() {
     album.genre
   ))
 
-  const genresDeduped = Array.from(new Set(genres)).map((genre) =>(
-    <option value={genre}>{genre}</option>
+  const series = albums.map((album) => (
+    album.series
   ))
 
-  const artistsDeduped = Array.from(new Set(artists)).map((artist) =>(
+
+  const artistsDeduped = Array.from(new Set(artists)).map((artist) => (
     <option value={artist}>{artist}</option>
   ));
+
+  const genresDeduped = Array.from(new Set(genres)).map(genre => (
+    genre !== "" ?
+    <option value={genre}>{genre}</option>
+    : <div>1</div>
+  ) 
+  )
+
+  const seriesDeduped = Array.from(new Set(series)).map((set) => (
+    <option value={set}>{set}</option>
+  ))
+
 
 
   return (
     <>
       <div>
         <select name="artist" id="artist">
+          <option value="artist-default" selected>Artists</option>
           {artistsDeduped}
         </select>
         <select name="artist" id="artist">
+          <option value="genre-default" selected>Genre</option>
           {genresDeduped}
+        </select>
+        <select>
+          <option value="series-default" selected>Series</option>
+          {seriesDeduped}
         </select>
       </div>
       {albumMap}
