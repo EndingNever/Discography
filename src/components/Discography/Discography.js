@@ -40,9 +40,7 @@ export default function Discography() {
   ));
 
   const genresDeduped = Array.from(new Set(genres)).map(genre => (
-    genre !== "" ?
     <option value={genre}>{genre}</option>
-    : <div>1</div>
   ) 
   )
 
