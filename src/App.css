@@ -4,3 +4,7 @@
   text-align: center;
   height: 100%; /*? Is there a better way to set the height? Otherwise the images flow over into a white background*/
 }
+
+select{
+  margin-top: 12px;
+}

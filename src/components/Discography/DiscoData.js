@@ -6,6 +6,7 @@ const albums =
       releaseDate: new Date(2018, 3, 4),
       mixtape: 0,
       genre: "Hip Hop",
+      series: "",
       albumArt: "/images/Collegrove.jpg"
     },
     {
@@ -40,6 +41,7 @@ const albums =
       albumName: "Dedication 4",
       releaseDate: new Date(2012, 8, 3),
       mixtape: 1,
+      series: "Dedication",
       genre: "Hip Hop",
       albumArt: "/images/dedication4.jpg"
     },
